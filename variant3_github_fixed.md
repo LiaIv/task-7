@@ -120,8 +120,10 @@ $$
 C_1 + C_2 = 0,\\
 C_1 + 2C_2 = 1,
 \end{cases}
-\quad \Longrightarrow \quad C_2 = 1,\ C_1 = -1
+\quad \ => \quad C_2 = 1,\ C_1 = -1
 $$
+
+
 
 ---
 
