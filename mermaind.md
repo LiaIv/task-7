@@ -51,13 +51,20 @@ classDiagram
         -__add_downtime_to_executors() None
     }
 
-    AbstractSchedule <|-- Schedule : наследует
-    AbstractSchedule "1" *-- "*" Task : содержит
-    AbstractSchedule "1" *-- "*" ScheduleItem : содержит
-    ScheduleItem "*" --> "0..1" Task : ссылается
-    Schedule ..> Task : использует
-    Schedule ..> ScheduleItem : создает
+    AbstractSchedule <|-- Schedule
+    AbstractSchedule *-- Task
+    AbstractSchedule *-- ScheduleItem
+    ScheduleItem --> Task
+    Schedule ..> Task
+    Schedule ..> ScheduleItem
 
-    note for Schedule "Реализует ленточную стратегию\nсоставления расписания"
-    note for AbstractSchedule "Абстрактный базовый класс\nдля всех типов расписаний"
+    note for Schedule "Реализует ленточную стратегию составления расписания"
+    note for AbstractSchedule "Абстрактный базовый класс для всех типов расписаний"
 ```
+
+## Описание связей:
+
+- `<|--` : наследование
+- `*--` : композиция (содержит)
+- `-->` : ассоциация (ссылается)
+- `..>` : зависимость (использует)
